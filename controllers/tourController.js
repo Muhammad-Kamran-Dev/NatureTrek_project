@@ -13,32 +13,40 @@ let tours = toursData ? JSON.parse(toursData) : toursData;
 exports.checkId = (req, res, next, val) => {
   // Check item with the id exist or not
 
-  const tourExist = tours.find((element) => element.id === val * 1);
+  const tourExist = tours.find(element => element.id === val * 1);
   if (!tourExist)
     return res
       .status(404)
       .json({ status: STATUSES.FAIL, message: 'Invalid id' });
   next();
 };
-
-// HANDELER TOURS:
+exports.checkBody = (req, res, next) => {
+  // Check request body for price and name
+  if (!req.body.name || req.body.price) {
+    return res
+      .status(400)
+      .json({ status: STATUSES.FAIL, message: 'Name and Price is mandatory' });
+  }
+  next();
+};
+// HANDLER TOURS:
 exports.getAllTours = (req, res) => {
   res.status(200).json({
     status: STATUSES.SUCCESS,
     results: tours.length,
     data: {
-      tours,
-    },
+      tours
+    }
   });
 };
 
 exports.getTour = (req, res) => {
-  const tour = tours.filter((element) => element.id === req.params.id * 1);
+  const tour = tours.filter(element => element.id === req.params.id * 1);
   res.status(200).json({
     status: STATUSES.SUCCESS,
     data: {
-      tour,
-    },
+      tour
+    }
   });
 };
 exports.createTour = (req, res) => {
@@ -46,11 +54,11 @@ exports.createTour = (req, res) => {
   const newTour = Object.assign(req.body, { id: newId });
   tours.push(newTour);
 
-  // Wrirting to file
+  // Writing to file
   fs.writeFile(
     path.join(__dirname, '../dev-data/data/tours-simple.json'),
     JSON.stringify(tours),
-    (err) => {
+    err => {
       if (err) {
         return res
           .status(500)
@@ -59,8 +67,8 @@ exports.createTour = (req, res) => {
       res.status(201).send({
         status: STATUSES.SUCCESS,
         data: {
-          newTour,
-        },
+          newTour
+        }
       });
     }
   );
@@ -68,19 +76,19 @@ exports.createTour = (req, res) => {
 exports.updateTour = (req, res) => {
   const id = req.params.id * 1;
   const { name, duration } = req.body;
-  tours.forEach((element) => {
-    if (element.id == id) {
+  tours.forEach(element => {
+    if (element.id === id) {
       element.name = name;
       element.duration = duration;
     }
   });
-  const updatedTour = tours.find((element) => element.id == id);
+  const updatedTour = tours.find(element => element.id === id);
 
-  // Wrirting to file
+  // Writing to file
   fs.writeFile(
     path.join(__dirname, '../dev-data/data/tours-simple.json'),
     JSON.stringify(tours),
-    (err) => {
+    err => {
       if (err) {
         return res
           .status(500)
@@ -89,8 +97,8 @@ exports.updateTour = (req, res) => {
       res.status(200).send({
         status: STATUSES.SUCCESS,
         data: {
-          updatedTour,
-        },
+          updatedTour
+        }
       });
     }
   );
@@ -99,12 +107,12 @@ exports.deleteTour = (req, res) => {
   // NOTE: multiplying id with 1 convert string number to number
   const id = req.params.id * 1;
 
-  tours = tours.filter((element) => element.id !== id);
-  // Wrirting to file
+  tours = tours.filter(element => element.id !== id);
+  // Writing to file
   fs.writeFile(
     path.join(__dirname, '../dev-data/data/tours-simple.json'),
     JSON.stringify(tours),
-    (err) => {
+    err => {
       if (err) {
         return res
           .status(500)
@@ -112,7 +120,7 @@ exports.deleteTour = (req, res) => {
       }
       res.status(204).send({
         status: STATUSES.SUCCESS,
-        data: null,
+        data: null
       });
     }
   );
