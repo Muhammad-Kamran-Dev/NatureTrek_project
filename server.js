@@ -2,7 +2,6 @@ require('dotenv').config({ path: `${__dirname}/config.env` });
 
 const app = require('./app');
 const connectDb = require('./dbConnection');
-
 // Connect to Database
 connectDb();
 

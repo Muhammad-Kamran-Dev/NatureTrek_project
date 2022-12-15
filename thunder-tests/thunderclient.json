@@ -22,12 +22,12 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2022-12-13T08:05:21.203Z",
-    "modified": "2022-12-13T08:06:55.667Z",
+    "modified": "2022-12-15T20:16:56.070Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n   \"name\": \"new added\",\n   \"duration\": 15,\n    \"difficulty\": \"easy\"\n      \n}",
+      "raw": "{\n \"name\": \"The Park Camper\",\n  \"price\": 997,\n  \"rating\": 4.9\n}",
       "form": []
     },
     "tests": []
@@ -37,16 +37,16 @@
     "colId": "27511690-5756-4b89-8951-dea7e827ea3d",
     "containerId": "733a0ca2-8cbb-4505-9e1e-f1336fc72c80",
     "name": "Update Tour using id",
-    "url": "http://localhost:5000/api/v1/tours/5",
+    "url": "http://localhost:5000/api/v1/tours/639b8083e850d3f47b0d5a74",
     "method": "PATCH",
     "sortNum": 40000,
     "created": "2022-12-13T08:33:05.022Z",
-    "modified": "2022-12-13T14:20:36.642Z",
+    "modified": "2022-12-15T20:17:10.611Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"new Title\",\n  \"duration\": 15\n}",
+      "raw": "{\n  \"name\": \"new Title2\",\n  \"price\": 15,\n  \"rating\":45\n}",
       "form": []
     },
     "tests": []
@@ -56,11 +56,11 @@
     "colId": "27511690-5756-4b89-8951-dea7e827ea3d",
     "containerId": "733a0ca2-8cbb-4505-9e1e-f1336fc72c80",
     "name": "Delete Tour using id ",
-    "url": "http://localhost:5000/api/v1/tours/5",
+    "url": "http://localhost:5000/api/v1/tours/639b7f0ab4e2ce77551a2d20",
     "method": "DELETE",
     "sortNum": 50000,
     "created": "2022-12-13T08:52:04.941Z",
-    "modified": "2022-12-13T14:20:07.075Z",
+    "modified": "2022-12-15T20:19:33.562Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -70,11 +70,11 @@
     "colId": "27511690-5756-4b89-8951-dea7e827ea3d",
     "containerId": "733a0ca2-8cbb-4505-9e1e-f1336fc72c80",
     "name": "Get Tour",
-    "url": "http://localhost:5000/api/v1/tours/2",
+    "url": "http://localhost:5000/api/v1/tours/639b8083e850d3f47b0d5a74",
     "method": "GET",
     "sortNum": 25000,
     "created": "2022-12-13T10:15:29.121Z",
-    "modified": "2022-12-13T10:30:06.588Z",
+    "modified": "2022-12-15T20:17:20.367Z",
     "headers": [],
     "params": [],
     "tests": []
