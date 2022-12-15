@@ -6,8 +6,12 @@ const userRouter = require('./routes/userRoutes');
 const tourRouter = require('./routes/tourRoutes');
 
 // MIDDLEWARES
-app.use(morgan('dev'));
 app.use(express.json());
+
+// Use morgan only in development
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 
 //  ROUTES
 app.use('/api/v1/tours', tourRouter);
