@@ -1,23 +1,55 @@
 const STATUSES = require('../utils/statuses');
 const Tour = require('../models/toursModel');
 
+// MIDDLEWARE
+exports.aliasTopTours = (req, res, next) => {
+  req.query.limit = '5';
+  req.query.fields = 'name,price,difficulty,ratingsAverage';
+  req.query.sort = '-ratingsAverage, price';
+  next();
+};
+
 // HANDLER TOURS:
 exports.getAllTours = async (req, res) => {
   try {
     //  BUILD QUERY
+
     // 1A) Filtering
     const queryObj = { ...req.query }; // generating deep copy of req.query
 
     const excludedFields = ['page', 'sort', 'limit', 'fields'];
     excludedFields.forEach(el => delete queryObj[el]);
 
-
     // 1B) Advanced Filtering
     let queryStr = JSON.stringify(queryObj);
-    queryStr = JSON.parse(queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`));
-
+    queryStr = JSON.parse(
+      queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`)
+    );
     const query = Tour.find(queryStr);
 
+    // 2) Sorting
+    if (req.query.sort) {
+      const sortBY = req.query.sort.split(',').join(' ');
+      query.sort(sortBY);
+    } else {
+      query.sort('-createdAt');
+    }
+
+    // 3) Field Limiting
+    if (req.query.fields) {
+      const fields = req.query.fields.split(',').join(' ');
+      query.select(fields);
+    } else {
+      query.select('-__v');
+    }
+
+    // 4) Pagination
+    const page = req.query.page * 1 || 1;
+    const limit = req.query.limit * 1 || 10;
+
+    const skip = (page - 1) * limit;
+    query.skip(skip).limit(limit);
+    // EXECUTE QUERY
     const tours = await query;
 
     res.status(200).json({

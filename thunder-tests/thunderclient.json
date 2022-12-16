@@ -4,21 +4,22 @@
     "colId": "27511690-5756-4b89-8951-dea7e827ea3d",
     "containerId": "733a0ca2-8cbb-4505-9e1e-f1336fc72c80",
     "name": "Get All Tours",
-    "url": "http://localhost:5000/api/v1/tours?duration[gt]=5",
+    "url": "http://localhost:5000/api/v1/tours?limit=5&sort=-ratingsAverage,price,&fields=name,price,difficulty,ratingsAverage",
     "method": "GET",
     "sortNum": 20000,
     "created": "2022-12-12T16:52:43.731Z",
-    "modified": "2022-12-16T11:10:50.094Z",
+    "modified": "2022-12-16T14:48:43.256Z",
     "headers": [],
     "params": [
       {
         "name": "duration[gt]",
         "value": "5",
+        "isDisabled": true,
         "isPath": false
       },
       {
         "name": "difficulty",
-        "value": "easy",
+        "value": "medium",
         "isDisabled": true,
         "isPath": false
       },
@@ -31,7 +32,16 @@
       {
         "name": "limit",
         "value": "5",
-        "isDisabled": true,
+        "isPath": false
+      },
+      {
+        "name": "sort",
+        "value": "-ratingsAverage,price,",
+        "isPath": false
+      },
+      {
+        "name": "fields",
+        "value": "name,price,difficulty,ratingsAverage",
         "isPath": false
       }
     ],
@@ -61,16 +71,16 @@
     "colId": "27511690-5756-4b89-8951-dea7e827ea3d",
     "containerId": "733a0ca2-8cbb-4505-9e1e-f1336fc72c80",
     "name": "Update Tour using id",
-    "url": "http://localhost:5000/api/v1/tours/639b8083e850d3f47b0d5a74",
+    "url": "http://localhost:5000/api/v1/tours/639c49ebb5e15001dcdafaf3",
     "method": "PATCH",
     "sortNum": 40000,
     "created": "2022-12-13T08:33:05.022Z",
-    "modified": "2022-12-15T20:17:10.611Z",
+    "modified": "2022-12-16T11:18:22.904Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"new Title2\",\n  \"price\": 15,\n  \"rating\":45\n}",
+      "raw": "{\n  \"ratingsAverage\":4.9\n}",
       "form": []
     },
     "tests": []
@@ -80,11 +90,11 @@
     "colId": "27511690-5756-4b89-8951-dea7e827ea3d",
     "containerId": "733a0ca2-8cbb-4505-9e1e-f1336fc72c80",
     "name": "Delete Tour using id ",
-    "url": "http://localhost:5000/api/v1/tours/639b7f0ab4e2ce77551a2d20",
+    "url": "http://localhost:5000/api/v1/tours/639c49ebb5e15001dcdafaef",
     "method": "DELETE",
     "sortNum": 50000,
     "created": "2022-12-13T08:52:04.941Z",
-    "modified": "2022-12-15T20:19:33.562Z",
+    "modified": "2022-12-16T14:36:40.964Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -169,6 +179,20 @@
     "sortNum": 40000,
     "created": "2022-12-13T11:16:12.484Z",
     "modified": "2022-12-13T11:18:53.157Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "c19fb6c3-d251-42ca-b89d-732802d21486",
+    "colId": "27511690-5756-4b89-8951-dea7e827ea3d",
+    "containerId": "733a0ca2-8cbb-4505-9e1e-f1336fc72c80",
+    "name": "Get Top 5 Tours",
+    "url": "http://localhost:5000/api/v1/tours/top-5-cheap",
+    "method": "GET",
+    "sortNum": 22500,
+    "created": "2022-12-16T14:46:11.416Z",
+    "modified": "2022-12-16T14:46:41.951Z",
     "headers": [],
     "params": [],
     "tests": []
