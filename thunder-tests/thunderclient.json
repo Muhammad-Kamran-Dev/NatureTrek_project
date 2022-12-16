@@ -4,44 +4,41 @@
     "colId": "27511690-5756-4b89-8951-dea7e827ea3d",
     "containerId": "733a0ca2-8cbb-4505-9e1e-f1336fc72c80",
     "name": "Get All Tours",
-    "url": "http://localhost:5000/api/v1/tours?limit=5&sort=-ratingsAverage,price,&fields=name,price,difficulty,ratingsAverage",
+    "url": "http://localhost:5000/api/v1/tours?duration[gte]=5&difficulty=medium&page=1&limit=2&sort=price,-ratingsAverage&fields=name,price,ratingsAverage",
     "method": "GET",
     "sortNum": 20000,
     "created": "2022-12-12T16:52:43.731Z",
-    "modified": "2022-12-16T14:48:43.256Z",
+    "modified": "2022-12-16T15:24:17.486Z",
     "headers": [],
     "params": [
       {
-        "name": "duration[gt]",
+        "name": "duration[gte]",
         "value": "5",
-        "isDisabled": true,
         "isPath": false
       },
       {
         "name": "difficulty",
         "value": "medium",
-        "isDisabled": true,
         "isPath": false
       },
       {
         "name": "page",
         "value": "1",
-        "isDisabled": true,
         "isPath": false
       },
       {
         "name": "limit",
-        "value": "5",
+        "value": "2",
         "isPath": false
       },
       {
         "name": "sort",
-        "value": "-ratingsAverage,price,",
+        "value": "price,-ratingsAverage",
         "isPath": false
       },
       {
         "name": "fields",
-        "value": "name,price,difficulty,ratingsAverage",
+        "value": "name,price,ratingsAverage",
         "isPath": false
       }
     ],
@@ -71,16 +68,16 @@
     "colId": "27511690-5756-4b89-8951-dea7e827ea3d",
     "containerId": "733a0ca2-8cbb-4505-9e1e-f1336fc72c80",
     "name": "Update Tour using id",
-    "url": "http://localhost:5000/api/v1/tours/639c49ebb5e15001dcdafaf3",
+    "url": "http://localhost:5000/api/v1/tours/639c49ebb5e15001dcdafaed",
     "method": "PATCH",
     "sortNum": 40000,
     "created": "2022-12-13T08:33:05.022Z",
-    "modified": "2022-12-16T11:18:22.904Z",
+    "modified": "2022-12-16T15:21:18.435Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"ratingsAverage\":4.9\n}",
+      "raw": "{\n  \"ratingsAverage\":5\n}",
       "form": []
     },
     "tests": []
