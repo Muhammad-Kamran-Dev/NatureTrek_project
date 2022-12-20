@@ -4,41 +4,47 @@
     "colId": "27511690-5756-4b89-8951-dea7e827ea3d",
     "containerId": "733a0ca2-8cbb-4505-9e1e-f1336fc72c80",
     "name": "Get All Tours",
-    "url": "http://localhost:5000/api/v1/tours?duration[gte]=5&difficulty=medium&page=1&limit=2&sort=price,-ratingsAverage&fields=name,price,ratingsAverage",
+    "url": "http://localhost:5000/api/v1/tours",
     "method": "GET",
     "sortNum": 20000,
     "created": "2022-12-12T16:52:43.731Z",
-    "modified": "2022-12-16T15:24:17.486Z",
+    "modified": "2022-12-19T17:12:49.742Z",
     "headers": [],
     "params": [
       {
         "name": "duration[gte]",
         "value": "5",
-        "isPath": false
-      },
-      {
-        "name": "difficulty",
-        "value": "medium",
+        "isDisabled": true,
         "isPath": false
       },
       {
         "name": "page",
         "value": "1",
+        "isDisabled": true,
         "isPath": false
       },
       {
         "name": "limit",
         "value": "2",
+        "isDisabled": true,
         "isPath": false
       },
       {
         "name": "sort",
         "value": "price,-ratingsAverage",
+        "isDisabled": true,
         "isPath": false
       },
       {
         "name": "fields",
-        "value": "name,price,ratingsAverage",
+        "value": "name,difficulty",
+        "isDisabled": true,
+        "isPath": false
+      },
+      {
+        "name": "difficulty",
+        "value": "difficult",
+        "isDisabled": true,
         "isPath": false
       }
     ],
@@ -53,12 +59,12 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2022-12-13T08:05:21.203Z",
-    "modified": "2022-12-16T08:30:42.689Z",
+    "modified": "2022-12-20T04:10:09.828Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "  {\n    \"name\": \"The Snow Adventurer\",\n    \"duration\": 4,\n    \"maxGroupSize\": 10,\n    \"difficulty\": \"difficult\",\n    \"ratingsAverage\": 4.5,\n    \"ratingsQuantity\": 13,\n    \"price\": 997,\n    \"summary\": \"Exciting adventure in the snow with snowboarding and skiing\",\n    \"description\": \"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!\\nDolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipisicing elit!\",\n    \"imageCover\": \"tour-3-cover.jpg\",\n    \"images\": [\"tour-3-1.jpg\", \"tour-3-2.jpg\", \"tour-3-3.jpg\"],\n    \"startDates\": [\"2022-01-05,10:00\", \"2022-02-12,10:00\", \"2023-01-06,10:00\"]\n  }",
+      "raw": "{\n  \"name\": \"secret tour\",\n  \"duration\": 4,\n  \"maxGroupSize\": 10,\n  \"difficulty\": \"difficult\",\n  \"ratingsAverage\": 4.5,\n  \"ratingsQuantity\": 13,\n  \"price\": 997,\n  \"summary\": \"Exciting adventure in the snow with snowboarding and skiing\",\n  \"secretTour\": true,\n  \"description\": \"sit amet, consectetur adipisicing elit!\",\n  \"imageCover\": \"tour-3-cover.jpg\",\n  \"images\": [\n    \"tour-3-1.jpg\",\n    \"tour-3-2.jpg\",\n    \"tour-3-3.jpg\"\n  ],\n  \"startDates\": [\n    \"2022-01-05,10:00\",\n    \"2022-02-12,10:00\",\n    \"2023-01-06,10:00\"\n  ]\n}",
       "form": []
     },
     "tests": []
@@ -72,12 +78,12 @@
     "method": "PATCH",
     "sortNum": 40000,
     "created": "2022-12-13T08:33:05.022Z",
-    "modified": "2022-12-16T15:21:18.435Z",
+    "modified": "2022-12-16T18:40:52.972Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"ratingsAverage\":5\n}",
+      "raw": "{\n  \"ratingsAverage\":4.3\n}",
       "form": []
     },
     "tests": []
@@ -87,11 +93,11 @@
     "colId": "27511690-5756-4b89-8951-dea7e827ea3d",
     "containerId": "733a0ca2-8cbb-4505-9e1e-f1336fc72c80",
     "name": "Delete Tour using id ",
-    "url": "http://localhost:5000/api/v1/tours/639c49ebb5e15001dcdafaef",
+    "url": "http://localhost:5000/api/v1/tours/63a135a1afd520b86b1e6992",
     "method": "DELETE",
     "sortNum": 50000,
     "created": "2022-12-13T08:52:04.941Z",
-    "modified": "2022-12-16T14:36:40.964Z",
+    "modified": "2022-12-20T04:11:37.369Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -189,9 +195,42 @@
     "method": "GET",
     "sortNum": 22500,
     "created": "2022-12-16T14:46:11.416Z",
-    "modified": "2022-12-16T14:46:41.951Z",
+    "modified": "2022-12-16T15:29:51.860Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "ec88aab4-6dfa-4f50-8549-a6d201e294bd",
+    "colId": "27511690-5756-4b89-8951-dea7e827ea3d",
+    "containerId": "23dfc0f7-de8a-4971-afaf-93aaa1263469",
+    "name": "Tours Stats",
+    "url": "http://localhost:5000/api/v1/tours/tour-stats",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-12-16T18:34:16.463Z",
+    "modified": "2022-12-17T15:46:02.317Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "8ccc497a-09cd-4e0a-a4fe-5d795d3dc33c",
+    "colId": "27511690-5756-4b89-8951-dea7e827ea3d",
+    "containerId": "23dfc0f7-de8a-4971-afaf-93aaa1263469",
+    "name": "Tours Monthly plan",
+    "url": "http://localhost:5000/api/v1/tours/monthly-plan/2021",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-12-17T15:42:07.610Z",
+    "modified": "2022-12-19T18:34:06.843Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{}",
+      "form": []
+    },
     "tests": []
   }
 ]

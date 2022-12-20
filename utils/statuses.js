@@ -2,5 +2,5 @@
 module.exports = Object.freeze({
   SUCCESS: 'success',
   FAIL: 'fail',
-  ERROR: 'error',
+  ERROR: 'error'
 });
