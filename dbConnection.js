@@ -7,10 +7,7 @@ module.exports = () => {
     process.env.DATABASE_PASSWORD
   );
   mongoose.set('strictQuery', true);
-  mongoose
-    .connect(Db)
-    .then(() => {
-      console.log('connect db Successfully');
-    })
-    .catch(err => console.error('connection Unsuccessful ', err));
+  mongoose.connect(Db).then(() => {
+    console.log('connect db Successfully');
+  });
 };
