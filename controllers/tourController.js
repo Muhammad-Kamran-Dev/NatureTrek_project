@@ -2,6 +2,7 @@ const STATUSES = require('../utils/statuses');
 const Tour = require('../models/toursModel');
 const ApiFeatures = require('./../utils/apiFeatures');
 const AppError = require('../utils/appError');
+const catchAsync = require('../utils/catchAsync');
 
 // MIDDLEWARE
 exports.aliasTopTours = (req, res, next) => {
@@ -10,11 +11,7 @@ exports.aliasTopTours = (req, res, next) => {
   req.query.sort = '-ratingsAverage, price';
   next();
 };
-const catchAsync = fn => {
-  return (req, res, next) => {
-    fn(req, res, next).catch(next);
-  };
-};
+
 // HANDLER TOURS:
 exports.getAllTours = catchAsync(async (req, res, next) => {
   const features = new ApiFeatures(Tour.find(), req.query);
