@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "_id": "4f7dc7ff-d236-410e-8fb9-7915e8dc6df7",
+    "name": "Dev.Natours",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2022-12-23T10:17:40.688Z",
+    "modified": "2022-12-23T10:17:40.688Z",
+    "data": [
+      {
+        "name": "URL",
+        "value": "http://localhost:5000"
+      },
+      {
+        "name": "jwt",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYjE0NzdiZGUyYmIxNTUxY2M1YWVlNiIsImlhdCI6MTY3MjU2NDQ0NywiZXhwIjoxNjgwMzQwNDQ3fQ.k4sSV1mp6vBaaoXlfEjWdM0jMa23I3cCj2elwz0GRLg"
+      }
+    ]
+  }
+]

@@ -1,7 +1,4 @@
 {
-    "cSpell.words": [
-        "errmsg",
-        "maxlength",
-        "virtuals"
-    ]
+  "cSpell.words": ["errmsg", "maxlength", "virtuals"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
