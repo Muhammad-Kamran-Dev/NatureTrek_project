@@ -27,16 +27,16 @@ const userSchema = new mongoose.Schema(
       minlength: 8,
       select: false
     },
-    confirmPassword: {
-      type: String,
-      required: [true, 'Please confirm your password'],
-      validate: {
-        validator: function(password) {
-          return this.password === password;
-        },
-        message: 'Password do not match!'
-      }
-    },
+    // confirmPassword: {
+    //   type: String,
+    //   required: [true, 'Please confirm your password'],
+    //   validate: {
+    //     validator: function(password) {
+    //       return this.password === password;
+    //     },
+    //     message: 'Password do not match!'
+    //   }
+    // },
     role: {
       type: String,
       enum: ['user', 'guide', 'lead-guide', 'admin'],
@@ -50,24 +50,24 @@ const userSchema = new mongoose.Schema(
   { versionKey: false }
 );
 
-// NOTE: Mongoose Middlewares
-userSchema.pre('save', async function(next) {
-  // Storing the hash of password in Db
-  this.password = await bcrypt.hash(this.password, 12);
+// // NOTE: Mongoose Middlewares
+// userSchema.pre('save', async function(next) {
+//   // Storing the hash of password in Db
+//   this.password = await bcrypt.hash(this.password, 12);
 
-  // Delete confirm password to appear in the results
-  this.confirmPassword = undefined;
+//   // Delete confirm password to appear in the results
+//   this.confirmPassword = undefined;
 
-  next();
-});
+//   next();
+// });
 
-userSchema.pre('save', async function(next) {
-  if (!this.isModified('password') || this.isNew) return next();
+// userSchema.pre('save', async function(next) {
+//   if (!this.isModified('password') || this.isNew) return next();
 
-  // Set the passwordChangedAt property to time
-  this.passwordChangedAt = Date.now() - 1000;
-  next();
-});
+//   // Set the passwordChangedAt property to time
+//   this.passwordChangedAt = Date.now() - 1000;
+//   next();
+// });
 
 userSchema.pre(/^find/, function(next) {
   this.find({ active: { $ne: false } });

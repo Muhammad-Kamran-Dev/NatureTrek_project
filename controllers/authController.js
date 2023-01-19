@@ -6,13 +6,12 @@ const AppError = require('../utils/appError');
 const User = require('../models/userModel');
 const Statuses = require('../utils/statuses');
 const sendEmail = require('../utils/email');
-
 // Middlewares
 // Protect the route if user not logged in
 exports.protect = catchAsync(async (req, res, next) => {
   // 1) Getting token and check if it's there
   if (!req.headers.authorization)
-    return next(new AppError('Provide a valid token to get access', 401));
+    return next(new AppError('Your not Logged in.Try again', 401));
   const token = req.headers.authorization.split(' ')[1];
   if (!token) {
     return next(new AppError('Provide a valid token'));

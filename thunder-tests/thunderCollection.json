@@ -1,7 +1,7 @@
 [
   {
     "_id": "27511690-5756-4b89-8951-dea7e827ea3d",
-    "colName": "Natours",
+    "colName": "NatureTrek",
     "created": "2022-12-12T13:18:00.766Z",
     "sortNum": 10000,
     "folders": [
@@ -17,7 +17,7 @@
         "name": "Users",
         "containerId": "",
         "created": "2022-12-13T11:18:42.233Z",
-        "sortNum": 30000
+        "sortNum": 50000
       },
       {
         "_id": "23dfc0f7-de8a-4971-afaf-93aaa1263469",
@@ -32,6 +32,20 @@
         "containerId": "ee5987ad-8073-41da-b564-78cab3fe4923",
         "created": "2022-12-22T20:50:34.596Z",
         "sortNum": 50000
+      },
+      {
+        "_id": "caa0a8b3-d31b-4612-bdb2-452310957745",
+        "name": "Reviews",
+        "containerId": "",
+        "created": "2023-01-03T16:21:09.742Z",
+        "sortNum": 60000
+      },
+      {
+        "_id": "11f7d4bc-f67d-4dc9-b776-b16628ab54d5",
+        "name": "Tour/Reviews",
+        "containerId": "",
+        "created": "2023-01-07T09:27:36.208Z",
+        "sortNum": 70000
       }
     ]
   }

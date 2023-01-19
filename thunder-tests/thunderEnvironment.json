@@ -13,7 +13,25 @@
       },
       {
         "name": "jwt",
-        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYjE0NzdiZGUyYmIxNTUxY2M1YWVlNiIsImlhdCI6MTY3MjU2NDQ0NywiZXhwIjoxNjgwMzQwNDQ3fQ.k4sSV1mp6vBaaoXlfEjWdM0jMa23I3cCj2elwz0GRLg"
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGExZDViMDE5MGIyMTQzNjBkYzA1NyIsImlhdCI6MTY3MzU5NDE2NCwiZXhwIjoxNjgxMzcwMTY0fQ.IrfH1yjokb_gMG6M85q9IVkCj0T9ON3P4FF8DC364oI"
+      }
+    ]
+  },
+  {
+    "_id": "1b3f6ec9-377f-43f9-a9f4-3b5a28442604",
+    "name": "Prod.Natours",
+    "default": false,
+    "sortNum": 20000,
+    "created": "2023-01-08T08:02:21.137Z",
+    "modified": "2023-01-08T08:02:21.137Z",
+    "data": [
+      {
+        "name": "URL",
+        "value": "http://localhost:5000"
+      },
+      {
+        "name": "jwt",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYjY3Njc4ZWYzNzVhY2I0ODFhN2M2NSIsImlhdCI6MTY3MzE2MjM0MiwiZXhwIjoxNjgwOTM4MzQyfQ.rkDp9m8D30e07dkm76LqyKjxbBZcKrREsjIgg4_1pLw"
       }
     ]
   }
